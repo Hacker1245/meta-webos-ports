@@ -1,6 +1,8 @@
 # @@@LICENSE
 #
-#      Copyright (c) 2010-2012 Hewlett-Packard Development Company, L.P.
+#      Copyright (c) 2010-2019 LG Electronics, Inc.
+#      Copyright (c) 2018-2019 Herman van Hazendonk <github.com@herrie.org>
+#      Copyright (c) 2018-2019 Christophe Chapuis <chris.chapuis@gmail.com>
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -19,12 +21,18 @@
 # configuration file for cedric
 # specify all the modules to be compiled
 
-set(MODULE_SYSTEM_WEBOS_LINUX		NO)
-set(MODULE_BATTERY_WEBOS_LINUX		YES)
-set(MODULE_CHARGER_WEBOS_LINUX		YES)
-set(MODULE_KEYS_WEBOS_LINUX			YES)
-set(MODULE_TOUCHPANEL_WEBOS_LINUX		NO)
-set(MODULE_TOUCHPANEL_MTDEV_WEBOS_LINUX		YES)
+set(NYXMOD_OW_MSMMTP			TRUE)
+set(NYXMOD_OW_BATTERY			TRUE)
+set(NYXMOD_OW_CHARGER			TRUE)
+set(NYXMOD_OW_KEYS			TRUE)
+set(NYXMOD_OW_TOUCHPANEL		FALSE)
+set(NYXMOD_OW_TOUCHPANEL_MTDEV		TRUE)
+
+# provided by nyx-modules-hybris
+set(NYXMOD_OW_DEVICEINFO		FALSE)
+set(NYXMOD_OW_SYSTEM			FALSE)
+set(NYXMOD_OW_LED			FALSE)
+set(NYXMOD_OW_HAPTICS			FALSE))
 
 add_definitions(-DBATTERY_SYSFS_PATH=\"/sys/class/power_supply/battery/\")
 add_definitions(-DTOUCHPANEL_DEVICE=\"/dev/input/event2\")
